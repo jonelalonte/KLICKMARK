@@ -89,14 +89,15 @@ include __DIR__ . "/includes/header.php";
 
             </div>
 
-            <!-- RIGHT IMAGE -->
+            <!-- RIGHT MASCOT IMAGE -->
             <div class="hero-image">
 
                 <div class="hero-image-circle"></div>
 
                 <div class="hero-image-ring"></div>
 
-                <img src="<?= $baseUrl ?>/assets/images/logo.png" alt="KLICK MO">
+                <!-- Pinalitan ng mascot image -->
+                <img src="<?= $baseUrl ?>/assets/images/mascot.png" alt="KLICK MO Mascot" class="hero-mascot-img">
 
                 <!-- FLOATING CARD 1 -->
                 <div class="hero-floating-card card-one">
