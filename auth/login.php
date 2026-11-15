@@ -1,3 +1,4 @@
+
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -8,7 +9,7 @@ require_once("../firebaseRDB.php");
 
 $error = "";
 $success = isset($_SESSION["success"]) ? $_SESSION["success"] : "";
-unset($_SESSION["success"]); // Linisin pagkatapos ipakita
+unset($_SESSION["success"]);
 
 // Kung naka-login na ang user, i-redirect agad sa index.php
 if (isset($_SESSION["user_email"])) {
@@ -26,23 +27,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         $db = new firebaseRDB(FIREBASE_URL);
         $users = $db->retrieve("users");
-        $loggedIn = false;
 
         if ($users) {
             foreach ($users as $id => $user) {
                 if (isset($user['email']) && $user['email'] === $email) {
-                    // I-verify ang hash password mula sa register
                     if (isset($user['password']) && password_verify($password, $user['password'])) {
                         $_SESSION["user_id"] = $id;
                         $_SESSION["user_email"] = $user['email'];
                         $_SESSION["user_name"] = $user['name'] ?? "User";
-                        
+
                         header("Location: ../index.php");
                         exit();
                     }
                 }
             }
         }
+
         $error = "Maling email o password.";
     }
 }
@@ -52,15 +52,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | KLICK MARK</title>
+    <title>Login | KLICK MO</title>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #f4f9f6;
@@ -69,11 +71,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             display: flex;
             flex-direction: column;
         }
+
         .login-navbar {
             background: #ffffff;
             border-bottom: 1px solid #e2ebe5;
             padding: 16px 28px;
         }
+
         .login-navbar .nav-content {
             display: flex;
             align-items: center;
@@ -82,16 +86,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             margin: 0 auto;
             width: 100%;
         }
+
         .brand {
             display: flex;
             align-items: center;
             text-decoration: none;
         }
+
         .brand-logo-img {
-            height: 52px; /* Malaking image logo */
+            height: 52px;
             width: auto;
             object-fit: contain;
         }
+
         .home-link {
             display: flex;
             align-items: center;
@@ -102,6 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             text-decoration: none;
             transition: 0.2s;
         }
+
         .home-link:hover {
             color: #198754;
         }
@@ -114,6 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             justify-content: center;
             padding: 32px 20px;
         }
+
         .login-wrapper {
             display: grid;
             grid-template-columns: 1fr 1.15fr;
@@ -137,6 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             position: relative;
             overflow: hidden;
         }
+
         .banner-tag {
             display: inline-flex;
             align-items: center;
@@ -149,24 +159,31 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             letter-spacing: 1.2px;
             margin-bottom: 24px;
         }
+
         .banner-content h1 {
             font-size: 38px;
             font-weight: 900;
             line-height: 1.2;
             margin-bottom: 18px;
         }
-        .banner-content h1 span { color: #bbf7d0; }
+
+        .banner-content h1 span {
+            color: #bbf7d0;
+        }
+
         .banner-content p {
             font-size: 16px;
             line-height: 1.65;
             opacity: 0.94;
             margin-bottom: 32px;
         }
+
         .banner-features {
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
+
         .banner-features div {
             display: flex;
             align-items: center;
@@ -174,6 +191,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             font-size: 15px;
             font-weight: 600;
         }
+
         .banner-features i {
             font-size: 20px;
             background: rgba(255, 255, 255, 0.18);
@@ -185,6 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             justify-content: center;
             flex-shrink: 0;
         }
+
         .banner-decoration {
             position: absolute;
             bottom: -30px;
@@ -202,9 +221,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             flex-direction: column;
             justify-content: center;
         }
+
         .login-header {
             margin-bottom: 26px;
         }
+
         .login-icon {
             width: 50px;
             height: 50px;
@@ -217,12 +238,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             font-size: 24px;
             margin-bottom: 14px;
         }
+
         .login-header h2 {
             font-size: 28px;
             font-weight: 800;
             color: #123d27;
             margin-bottom: 6px;
         }
+
         .login-header p {
             font-size: 15px;
             color: #64748b;
@@ -232,6 +255,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         .form-field {
             margin-bottom: 20px;
         }
+
         .form-field label {
             display: block;
             font-size: 14px;
@@ -239,6 +263,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             color: #334155;
             margin-bottom: 8px;
         }
+
         .input-wrapper {
             display: flex;
             align-items: center;
@@ -248,16 +273,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             background: #f8fafc;
             transition: 0.2s;
         }
+
         .input-wrapper:focus-within {
             border-color: #198754;
             background: #ffffff;
             box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.12);
         }
+
         .input-wrapper > i {
             color: #64748b;
             font-size: 18px;
             margin-right: 12px;
         }
+
         .input-wrapper input {
             flex: 1;
             border: none;
@@ -268,6 +296,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             color: #1e293b;
             width: 100%;
         }
+
         .password-toggle {
             border: none;
             background: transparent;
@@ -294,6 +323,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             margin-top: 10px;
             transition: 0.2s;
         }
+
         .login-button:hover {
             background: #146c43;
         }
@@ -304,12 +334,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             font-size: 14px;
             color: #64748b;
         }
+
         .register-link a {
             color: #198754;
             font-weight: 700;
             text-decoration: none;
             margin-left: 4px;
         }
+
         .register-link a:hover {
             text-decoration: underline;
         }
@@ -318,6 +350,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             text-align: center;
             margin-top: 14px;
         }
+
         .back-home a {
             color: #64748b;
             font-size: 13px;
@@ -327,6 +360,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             align-items: center;
             gap: 6px;
         }
+
         .back-home a:hover {
             color: #198754;
         }
@@ -343,6 +377,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             border-top: 1px solid #e2e8f0;
             padding-top: 16px;
         }
+
         .copyright {
             text-align: center;
             padding: 16px 28px;
@@ -359,12 +394,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 grid-template-columns: 1fr;
                 max-width: 540px;
             }
+
             .login-banner {
                 padding: 36px 28px;
             }
+
             .banner-content h1 {
                 font-size: 30px;
             }
+
             .login-card {
                 padding: 36px 28px;
             }
@@ -376,15 +414,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <!-- NAVBAR -->
 <nav class="login-navbar">
     <div class="nav-content">
+
         <!-- IMAGE LOGO -->
         <a href="../index.php" class="brand">
-            <img src="../assets/images/logo.png" alt="KLICK MARK Logo" class="brand-logo-img">
+            <img src="../assets/images/logo.png" alt="KLICK MO Logo" class="brand-logo-img">
         </a>
 
         <a href="../index.php" class="home-link">
             <i class="bi bi-house"></i>
             Home
         </a>
+
     </div>
 </nav>
 
@@ -395,6 +435,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <!-- LEFT BANNER -->
         <div class="login-banner">
             <div class="banner-content">
+
                 <span class="banner-tag">
                     <i class="bi bi-stars"></i>
                     WELCOME BACK
@@ -406,8 +447,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </h1>
 
                 <p>
-                    Your favorite products are just a few clicks away. 
-                    Sign in to explore, shop, and enjoy everything KLICK MARK has to offer.
+                    Your favorite products are just a few clicks away.
+                    Sign in to explore, shop, and enjoy everything KLICK MO has to offer.
                 </p>
 
                 <div class="banner-features">
@@ -415,15 +456,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <i class="bi bi-bag-check"></i>
                         <span>Discover Amazing Products</span>
                     </div>
+
                     <div>
                         <i class="bi bi-shield-check"></i>
                         <span>Secure Shopping Experience</span>
                     </div>
+
                     <div>
                         <i class="bi bi-heart"></i>
                         <span>Your Shopping Journey Starts Here</span>
                     </div>
                 </div>
+
             </div>
 
             <div class="banner-decoration">
@@ -433,15 +477,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <!-- RIGHT LOGIN FORM -->
         <div class="login-card">
+
             <div class="login-header">
                 <div class="login-icon">
                     <i class="bi bi-person-circle"></i>
                 </div>
+
                 <h2>Welcome Back!</h2>
                 <p>Enter your account details to continue.</p>
             </div>
 
-            <!-- SUCCESS MESSAGE (Mula sa Register) -->
+            <!-- SUCCESS MESSAGE -->
             <?php if (!empty($success)): ?>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <i class="bi bi-check-circle-fill me-2"></i>
@@ -461,11 +507,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             <!-- LOGIN FORM -->
             <form method="POST" action="">
+
                 <!-- EMAIL -->
                 <div class="form-field">
                     <label for="email">Email Address</label>
+
                     <div class="input-wrapper">
                         <i class="bi bi-envelope"></i>
+
                         <input
                             type="email"
                             name="email"
@@ -481,8 +530,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <!-- PASSWORD -->
                 <div class="form-field">
                     <label for="password">Password</label>
+
                     <div class="input-wrapper">
                         <i class="bi bi-lock"></i>
+
                         <input
                             type="password"
                             name="password"
@@ -491,6 +542,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             autocomplete="current-password"
                             required
                         >
+
                         <button
                             type="button"
                             class="password-toggle"
@@ -507,6 +559,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <span>Login to Account</span>
                     <i class="bi bi-arrow-right"></i>
                 </button>
+
             </form>
 
             <!-- REGISTER LINK -->
@@ -526,19 +579,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <!-- SECURITY FOOTER -->
             <div class="login-footer">
                 <i class="bi bi-shield-lock"></i>
-                Secure login powered by KLICK MARK.
+                Secure login powered by KLICK MO.
             </div>
-        </div>
 
+        </div>
     </div>
 
     <!-- COPYRIGHT -->
     <div class="copyright">
-        &copy; <?= date("Y") ?> KLICK MARK. All rights reserved.
+        &copy; <?= date("Y") ?> KLICK MO. All rights reserved.
     </div>
+
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
 function togglePassword() {
     const password = document.getElementById("password");
