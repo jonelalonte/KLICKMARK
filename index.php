@@ -1,7 +1,7 @@
 <?php
-
-require_once("config.php");
-require_once("firebaseRDB.php");
+// Siguraduhing tama ang pag-load ng config at firebase gamit ang absolute path (__DIR__)
+require_once __DIR__ . "/config.php";
+require_once __DIR__ . "/firebaseRDB.php";
 
 $db = new firebaseRDB(FIREBASE_URL);
 
@@ -23,10 +23,10 @@ if ($search !== "") {
     });
 }
 
-include("includes/header.php");
+// Gamitin din ang __DIR__ para sa header include
+include __DIR__ . "/includes/header.php";
 
 ?>
-
 
 <!-- =========================================
      KLICK MARK - ONLINE GROCERY HERO
