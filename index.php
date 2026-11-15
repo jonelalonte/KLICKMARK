@@ -1,5 +1,5 @@
 <?php
-// Siguraduhing tama ang pag-load ng config at firebase gamit ang absolute path (__DIR__)
+// Load config and Firebase
 require_once __DIR__ . "/config.php";
 require_once __DIR__ . "/firebaseRDB.php";
 
@@ -23,13 +23,12 @@ if ($search !== "") {
     });
 }
 
-// Gamitin din ang __DIR__ para sa header include
+// Load header
 include __DIR__ . "/includes/header.php";
-
 ?>
 
 <!-- =========================================
-     KLICK MARK - ONLINE GROCERY HERO
+     KLICK MO - ONLINE GROCERY HERO
 ========================================= -->
 
 <section class="hero-section">
@@ -45,7 +44,7 @@ include __DIR__ . "/includes/header.php";
 
                 <span class="hero-label">
                     <i class="bi bi-basket2-fill"></i>
-                    WELCOME TO KLICK MARK
+                    WELCOME TO KLICK MO
                 </span>
 
                 <h1>
@@ -97,7 +96,7 @@ include __DIR__ . "/includes/header.php";
 
                 <div class="hero-image-ring"></div>
 
-                <img src="<?= $baseUrl ?>/assets/images/logo.png" alt="KLICK MARK">
+                <img src="<?= $baseUrl ?>/assets/images/logo.png" alt="KLICK MO">
 
                 <!-- FLOATING CARD 1 -->
                 <div class="hero-floating-card card-one">
@@ -141,7 +140,7 @@ include __DIR__ . "/includes/header.php";
 </section>
 
 
-<!-- CATEGORIES (Full-width din para sagad sa gilid) -->
+<!-- CATEGORIES -->
 <section class="container-fluid px-4 category-section">
 
     <div class="section-heading">
@@ -182,7 +181,8 @@ include __DIR__ . "/includes/header.php";
     </div>
 </section>
 
-<!-- PRODUCTS (Full-width din para malawak ang lagayan ng items) -->
+
+<!-- PRODUCTS -->
 <section class="container-fluid px-4 product-section" id="products">
 
     <div class="section-heading">
@@ -281,4 +281,4 @@ include __DIR__ . "/includes/header.php";
     </div>
 </section>
 
-<?php include("includes/footer.php"); ?>
+<?php include __DIR__ . "/includes/footer.php"; ?>

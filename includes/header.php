@@ -1,13 +1,18 @@
+
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Dynamic base URL: blangko kapag nasa Render, /KLICK%20MARK kapag nasa localhost
-$baseUrl = (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) ? "/KLICK%20MARK" : "";
+// Dynamic base URL
+// Localhost: /KLICK%20MO
+// Render: blank
+$baseUrl = (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false)
+    ? "/KLICK%20MO"
+    : "";
+
 $isLoggedIn = isset($_SESSION["user_id"]);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +20,7 @@ $isLoggedIn = isset($_SESSION["user_id"]);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>KLICK MARK | Online Grocery</title>
+    <title>KLICK MO | Online Grocery</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +38,7 @@ $isLoggedIn = isset($_SESSION["user_id"]);
 
 <body>
 
-<!-- KLICK MARK NAVBAR -->
+<!-- KLICK MO NAVBAR -->
 <nav class="navbar navbar-expand-lg klick-navbar">
 
     <div class="container-fluid px-lg-4 px-3">
@@ -44,7 +49,7 @@ $isLoggedIn = isset($_SESSION["user_id"]);
 
             <img
                 src="<?= $baseUrl ?>/assets/images/logo.png"
-                alt="KLICK MARK Logo"
+                alt="KLICK MO Logo"
                 class="navbar-logo"
             >
 
@@ -120,59 +125,60 @@ $isLoggedIn = isset($_SESSION["user_id"]);
 
                 <?php if ($isLoggedIn): ?>
 
-            <!-- USER ACCOUNT -->
-            <li class="nav-item dropdown">
+                <!-- USER ACCOUNT -->
+                <li class="nav-item dropdown">
 
-                <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
 
-                    <i class="bi bi-person-circle"></i>
+                        <i class="bi bi-person-circle"></i>
 
-                    <?= htmlspecialchars(
-                        $_SESSION["name"] ?? $_SESSION["email"] ?? "My Account",
-                        ENT_QUOTES,
-                        "UTF-8"
-                    ) ?>
+                        <?= htmlspecialchars(
+                            $_SESSION["name"] ?? $_SESSION["email"] ?? "My Account",
+                            ENT_QUOTES,
+                            "UTF-8"
+                        ) ?>
 
-                </a>
+                    </a>
 
-                <ul class="dropdown-menu dropdown-menu-end">
+                    <ul class="dropdown-menu dropdown-menu-end">
 
-                    <li>
-                        <h6 class="dropdown-header">My Account</h6>
-                    </li>
+                        <li>
+                            <h6 class="dropdown-header">My Account</h6>
+                        </li>
 
-                    <li>
-                        <a class="dropdown-item" href="<?= $baseUrl ?>/customer/profile.php">
-                            <i class="bi bi-person me-2"></i> My Profile
-                        </a>
-                    </li>
+                        <li>
+                            <a class="dropdown-item" href="<?= $baseUrl ?>/customer/profile.php">
+                                <i class="bi bi-person me-2"></i>
+                                My Profile
+                            </a>
+                        </li>
 
-                    <li>
-                        <a class="dropdown-item" href="<?= $baseUrl ?>/cart.php">
-                            <i class="bi bi-cart3 me-2"></i>
-                            My Cart
-                        </a>
-                    </li>
+                        <li>
+                            <a class="dropdown-item" href="<?= $baseUrl ?>/cart.php">
+                                <i class="bi bi-cart3 me-2"></i>
+                                My Cart
+                            </a>
+                        </li>
 
-                    <li><hr class="dropdown-divider"></li>
+                        <li><hr class="dropdown-divider"></li>
 
-                    <li>
-                        <a class="dropdown-item text-danger"
-                        href="<?= $baseUrl ?>/auth/logout.php">
-                            <i class="bi bi-box-arrow-right me-2"></i>
-                            Logout
-                        </a>
-                    </li>
+                        <li>
+                            <a class="dropdown-item text-danger"
+                               href="<?= $baseUrl ?>/auth/logout.php">
+                                <i class="bi bi-box-arrow-right me-2"></i>
+                                Logout
+                            </a>
+                        </li>
 
-                </ul>
-            </li>
+                    </ul>
+                </li>
 
-        <?php else: ?>
+                <?php else: ?>
 
                 <!-- LOGIN -->
                 <li class="nav-item">
@@ -190,9 +196,11 @@ $isLoggedIn = isset($_SESSION["user_id"]);
                     </a>
                 </li>
 
-            <?php endif; ?>
+                <?php endif; ?>
 
             </ul>
         </div>
     </div>
 </nav>
+</body>
+</html>

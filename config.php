@@ -7,4 +7,8 @@ define(
     "https://klick-mark-default-rtdb.firebaseio.com"
 );
 
+// Awtomatikong mag-aadjust kung nasa localhost o live sa Render
+$baseUrl = (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) ? "/KLICK%20MARK" : "";
+define("BASE_URL", $baseUrl);
+
 ?>
