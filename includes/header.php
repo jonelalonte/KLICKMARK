@@ -1,4 +1,3 @@
-
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -48,7 +47,7 @@ $isLoggedIn = isset($_SESSION["user_id"]);
            href="<?= $baseUrl ?>/index.php">
 
             <img
-                src="<?= $baseUrl ?>/assets/images/logo.png"
+                src="<?= $baseUrl ?>/assets/images/logo.png?v=<?= time() ?>"
                 alt="KLICK MO Logo"
                 class="navbar-logo"
             >
@@ -202,5 +201,3 @@ $isLoggedIn = isset($_SESSION["user_id"]);
         </div>
     </div>
 </nav>
-</body>
-</html>
