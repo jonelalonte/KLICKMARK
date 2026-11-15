@@ -97,7 +97,7 @@ include("includes/header.php");
 
                 <div class="hero-image-ring"></div>
 
-                <img src="<?= $baseUrl ?>/assets/images/logo.png" alt="KLICK MARK" class="...">
+                <img src="<?= $baseUrl ?>/assets/images/logo.png" alt="KLICK MARK">
 
                 <!-- FLOATING CARD 1 -->
                 <div class="hero-floating-card card-one">
