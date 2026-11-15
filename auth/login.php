@@ -2,7 +2,6 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-// Dito na susunod ang iba mong PHP code o include files
 
 require_once("../config.php");
 require_once("../firebaseRDB.php");
@@ -67,17 +66,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f4f9f6;
+            /* Animated Vector Gradient Background (Pink, Lavender, Sky Blue) */
+            background: linear-gradient(135deg, #dfaed2 0%, #b892cc 35%, #7bc6eb 70%, #4facfe 100%);
+            background-size: 300% 300%;
+            animation: gradientAnimation 12s ease infinite;
             color: #1e293b;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .login-navbar {
-            background: #ffffff;
-            border-bottom: 1px solid #e2ebe5;
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
             padding: 16px 28px;
+            backdrop-filter: blur(10px);
         }
 
         .login-navbar .nav-content {
@@ -105,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             display: flex;
             align-items: center;
             gap: 6px;
-            color: #64748b;
+            color: #3b204e;
             font-size: 14px;
             font-weight: 600;
             text-decoration: none;
@@ -130,16 +139,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             grid-template-columns: 1fr 1.15fr;
             max-width: 1180px;
             width: 100%;
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(20, 108, 67, 0.15);
-            border: 1px solid #e2ebe5;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
         }
 
         /* LEFT BANNER */
         .login-banner {
-            background: linear-gradient(145deg, #198754 0%, #115c37 100%);
+            background: linear-gradient(145deg, #a855a0 0%, #7d68c8 50%, #2a9fd6 100%);
             color: #ffffff;
             padding: 50px 42px;
             display: flex;
@@ -153,13 +163,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.22);
             padding: 8px 16px;
             border-radius: 24px;
             font-size: 12px;
             font-weight: 700;
             letter-spacing: 1.2px;
             margin-bottom: 24px;
+            backdrop-filter: blur(5px);
         }
 
         .banner-content h1 {
@@ -167,10 +178,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             font-weight: 900;
             line-height: 1.2;
             margin-bottom: 18px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
         .banner-content h1 span {
-            color: #bbf7d0;
+            color: #ffe066;
         }
 
         .banner-content p {
@@ -196,7 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         .banner-features i {
             font-size: 20px;
-            background: rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.22);
             width: 40px;
             height: 40px;
             border-radius: 10px;
@@ -211,7 +223,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             bottom: -30px;
             right: -30px;
             font-size: 160px;
-            color: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.07);
             pointer-events: none;
         }
 
@@ -231,8 +243,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         .login-icon {
             width: 50px;
             height: 50px;
-            background: #e6f4ea;
-            color: #198754;
+            background: #eee7f8;
+            color: #8968b5;
             border-radius: 14px;
             display: flex;
             align-items: center;
@@ -244,7 +256,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         .login-header h2 {
             font-size: 28px;
             font-weight: 800;
-            color: #123d27;
+            color: #3b204e;
             margin-bottom: 6px;
         }
 
@@ -277,9 +289,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         .input-wrapper:focus-within {
-            border-color: #198754;
+            border-color: #8968b5;
             background: #ffffff;
-            box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.12);
+            box-shadow: 0 0 0 4px rgba(137, 104, 181, 0.12);
         }
 
         .input-wrapper > i {
@@ -310,7 +322,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         .login-button {
             width: 100%;
-            background: #198754;
+            background: #7d68c8;
             color: #ffffff;
             border: none;
             border-radius: 12px;
@@ -327,7 +339,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         .login-button:hover {
-            background: #146c43;
+            background: #6550b0;
         }
 
         .register-link {
@@ -338,7 +350,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         .register-link a {
-            color: #198754;
+            color: #7d68c8;
             font-weight: 700;
             text-decoration: none;
             margin-left: 4px;
@@ -364,7 +376,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         .back-home a:hover {
-            color: #198754;
+            color: #7d68c8;
         }
 
         .login-footer {
@@ -384,10 +396,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             text-align: center;
             padding: 16px 28px;
             font-size: 13px;
-            color: #64748b;
-            background: #ffffff;
-            border-top: 1px solid #e2ebe5;
+            color: #3b204e;
+            background: rgba(255, 255, 255, 0.9);
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
             margin-top: auto;
+            backdrop-filter: blur(10px);
         }
 
         /* RESPONSIVE BREAKPOINT */
@@ -396,15 +409,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 grid-template-columns: 1fr;
                 max-width: 540px;
             }
-
             .login-banner {
                 padding: 36px 28px;
             }
-
             .banner-content h1 {
                 font-size: 30px;
             }
-
             .login-card {
                 padding: 36px 28px;
             }
@@ -416,17 +426,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <!-- NAVBAR -->
 <nav class="login-navbar">
     <div class="nav-content">
-
-        <!-- IMAGE LOGO -->
         <a href="../index.php" class="brand">
             <img src="../assets/images/logo.png" alt="KLICK MO Logo" class="brand-logo-img">
         </a>
-
         <a href="../index.php" class="home-link">
             <i class="bi bi-house"></i>
             Home
         </a>
-
     </div>
 </nav>
 
@@ -437,41 +443,33 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <!-- LEFT BANNER -->
         <div class="login-banner">
             <div class="banner-content">
-
                 <span class="banner-tag">
                     <i class="bi bi-stars"></i>
                     WELCOME BACK
                 </span>
-
                 <h1>
                     Great to see<br>
                     <span>you again.</span>
                 </h1>
-
                 <p>
                     Your favorite products are just a few clicks away.
                     Sign in to explore, shop, and enjoy everything KLICK MO has to offer.
                 </p>
-
                 <div class="banner-features">
                     <div>
                         <i class="bi bi-bag-check"></i>
                         <span>Discover Amazing Products</span>
                     </div>
-
                     <div>
                         <i class="bi bi-shield-check"></i>
                         <span>Secure Shopping Experience</span>
                     </div>
-
                     <div>
                         <i class="bi bi-heart"></i>
                         <span>Your Shopping Journey Starts Here</span>
                     </div>
                 </div>
-
             </div>
-
             <div class="banner-decoration">
                 <i class="bi bi-bag-heart-fill"></i>
             </div>
@@ -479,12 +477,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <!-- RIGHT LOGIN FORM -->
         <div class="login-card">
-
             <div class="login-header">
                 <div class="login-icon">
                     <i class="bi bi-person-circle"></i>
                 </div>
-
                 <h2>Welcome Back!</h2>
                 <p>Enter your account details to continue.</p>
             </div>
@@ -509,14 +505,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             <!-- LOGIN FORM -->
             <form method="POST" action="">
-
                 <!-- EMAIL -->
                 <div class="form-field">
                     <label for="email">Email Address</label>
-
                     <div class="input-wrapper">
                         <i class="bi bi-envelope"></i>
-
                         <input
                             type="email"
                             name="email"
@@ -532,10 +525,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <!-- PASSWORD -->
                 <div class="form-field">
                     <label for="password">Password</label>
-
                     <div class="input-wrapper">
                         <i class="bi bi-lock"></i>
-
                         <input
                             type="password"
                             name="password"
@@ -544,7 +535,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             autocomplete="current-password"
                             required
                         >
-
                         <button
                             type="button"
                             class="password-toggle"
@@ -561,7 +551,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <span>Login to Account</span>
                     <i class="bi bi-arrow-right"></i>
                 </button>
-
             </form>
 
             <!-- REGISTER LINK -->
@@ -583,7 +572,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <i class="bi bi-shield-lock"></i>
                 Secure login powered by KLICK MO.
             </div>
-
         </div>
     </div>
 
@@ -591,7 +579,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="copyright">
         &copy; <?= date("Y") ?> KLICK MO. All rights reserved.
     </div>
-
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
