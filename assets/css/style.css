@@ -1,32 +1,34 @@
+
 /* =========================================
-   KLICK MARK - PREMIUM ECOMMERCE DESIGN
-   Modern • Clean • Animated Gradient Theme
+   KLICK MO - PREMIUM ECOMMERCE DESIGN
+   Lavender • Purple • Pink • Sky Blue
+   Modern • Clean • Elegant
 ========================================= */
+
 
 /* =========================================
    1. ROOT VARIABLES
 ========================================= */
 
 :root {
-    --primary: #198754;
-    --primary-dark: #126640;
-    --primary-light: #e9f6ed;
-    --accent: #46ad75;
+    --primary: #8968b5;
+    --primary-dark: #68478f;
+    --primary-light: #f1eafa;
+    --accent: #7bc6eb;
 
-    --text: #20352a;
-    --muted: #829087;
+    --text: #352b42;
+    --muted: #82758e;
 
     --white: #ffffff;
-    --background: #f7faf8;
-    --surface: #f0f6f2;
-    --border: #e7eee9;
+    --background: #faf8fc;
+    --surface: #f4eff8;
+    --border: #ece5f2;
 
-    /* Additional Accent Colors */
     --yellow: #f4c95d;
     --yellow-light: #fff4d6;
 
-    --coral: #ef9287;
-    --coral-light: #fde7e4;
+    --coral: #dfaed2;
+    --coral-light: #f9eaf4;
 
     --blue: #79a9e5;
     --blue-light: #e5efff;
@@ -34,15 +36,16 @@
     --lavender: #ad96d2;
     --lavender-light: #eee7f8;
 
-    --sage: #a9c49b;
-    --sage-light: #edf4e8;
+    --sage: #b892cc;
+    --sage-light: #f1eafa;
 
-    --shadow: 0 4px 18px rgba(25, 70, 42, 0.055);
-    --shadow-hover: 0 12px 30px rgba(25, 70, 42, 0.10);
+    --shadow: 0 4px 18px rgba(104, 71, 143, 0.07);
+    --shadow-hover: 0 12px 30px rgba(104, 71, 143, 0.13);
 
     --radius: 16px;
     --radius-sm: 10px;
 }
+
 
 /* =========================================
    2. GLOBAL RESET
@@ -82,8 +85,10 @@ img {
     max-width: 100%;
 }
 
+
 /* =========================================
-   7. HERO SECTION & ANIMATED VECTOR GRADIENT
+   7. HERO SECTION
+   STATIC PINK / PURPLE / BLUE GRADIENT
 ========================================= */
 
 .hero-section {
@@ -93,26 +98,19 @@ img {
     width: 100%;
     min-height: 550px;
     padding: 65px 5%;
-    /* Eksaktong kulay ng reference image: Pink, Purple, Lavender, at Sky Blue */
-    background: linear-gradient(135deg, #dfaed2 0%, #b892cc 35%, #7bc6eb 70%, #4facfe 100%);
-    background-size: 300% 300%;
-    animation: gradientAnimation 12s ease infinite;
+
+    background: linear-gradient(
+        135deg,
+        #dfaed2 0%,
+        #b892cc 35%,
+        #7bc6eb 70%,
+        #4facfe 100%
+    );
+
     display: flex;
     align-items: center;
 }
 
-/* Smooth shifting animation para sa background */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
 
 /* BACKGROUND SHAPES */
 
@@ -154,10 +152,12 @@ img {
     0%, 100% {
         transform: translate(0, 0);
     }
+
     50% {
         transform: translate(15px, -20px);
     }
 }
+
 
 /* HERO CONTENT */
 
@@ -168,11 +168,13 @@ img {
     max-width: 1380px;
     min-height: 480px;
     margin: auto;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 45px;
 }
+
 
 /* LEFT TEXT */
 
@@ -186,6 +188,7 @@ img {
         opacity: 0;
         transform: translateX(-35px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -197,14 +200,18 @@ img {
     align-items: center;
     gap: 9px;
     padding: 10px 17px;
+
     background: rgba(255, 255, 255, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.9);
     border-radius: 30px;
+
     color: #4a2e5d;
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 1px;
+
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
     margin-bottom: 25px;
     backdrop-filter: blur(10px);
 }
@@ -219,8 +226,11 @@ img {
     font-weight: 900;
     line-height: 1.12;
     letter-spacing: -2px;
+
     color: #ffffff;
+
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+
     margin-bottom: 22px;
 }
 
@@ -231,12 +241,16 @@ img {
 
 .hero-text p {
     max-width: 510px;
+
     color: #f0f4f8;
     font-size: 15px;
     line-height: 1.9;
+
     text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+
     margin-bottom: 30px;
 }
+
 
 /* HERO BUTTONS */
 
@@ -252,23 +266,31 @@ img {
     align-items: center;
     justify-content: center;
     gap: 12px;
+
     padding: 14px 27px;
+
     background: #ffffff;
     color: #3b204e;
+
     border: 1px solid #ffffff;
     border-radius: 10px;
+
     font-size: 14px;
     font-weight: 750;
+
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
     transition: all 0.3s ease;
 }
 
 .hero-btn:hover {
     color: #ffffff;
-    background: #198754;
-    border-color: #198754;
+    background: #8968b5;
+    border-color: #8968b5;
+
     transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(25, 135, 84, 0.3);
+
+    box-shadow: 0 12px 25px rgba(104, 71, 143, 0.25);
 }
 
 .hero-btn i {
@@ -283,6 +305,7 @@ img {
     color: #f7fafc;
     font-size: 12px;
     font-weight: 650;
+
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -290,6 +313,7 @@ img {
     color: #ffe066;
     margin-right: 5px;
 }
+
 
 /* HERO FEATURES */
 
@@ -304,9 +328,11 @@ img {
     display: flex;
     align-items: center;
     gap: 8px;
+
     color: #ffffff;
     font-size: 12px;
     font-weight: 700;
+
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -315,16 +341,19 @@ img {
     color: #ffe066;
 }
 
+
 /* =========================================
-   8. RIGHT HERO IMAGE & MASCOT STYLING
+   8. RIGHT HERO IMAGE
 ========================================= */
 
 .hero-image {
     position: relative;
     min-height: 430px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     animation: heroImageEnter 1s ease both;
 }
 
@@ -333,24 +362,32 @@ img {
         opacity: 0;
         transform: translateX(35px) scale(0.95);
     }
+
     to {
         opacity: 1;
         transform: translateX(0) scale(1);
     }
 }
 
+
 /* MAIN CIRCLE */
 
 .hero-image-circle {
     position: absolute;
+
     width: min(390px, 85%);
     aspect-ratio: 1;
+
     border-radius: 50%;
+
     background: rgba(255, 255, 255, 0.2);
+
     box-shadow:
         inset -15px -15px 35px rgba(255, 255, 255, 0.3),
         0 20px 50px rgba(0, 0, 0, 0.1);
+
     backdrop-filter: blur(8px);
+
     animation: circlePulse 5s ease-in-out infinite;
 }
 
@@ -358,19 +395,24 @@ img {
     0%, 100% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.04);
     }
 }
 
+
 /* OUTER RING */
 
 .hero-image-ring {
     position: absolute;
+
     width: min(455px, 98%);
     aspect-ratio: 1;
+
     border: 2px dashed rgba(255, 255, 255, 0.35);
     border-radius: 50%;
+
     animation: ringRotate 35s linear infinite;
 }
 
@@ -378,23 +420,30 @@ img {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
 }
 
-/* MASCOT / MAIN HERO IMAGE */
+
+/* MAIN HERO IMAGE */
 
 .grocery-hero-img,
 .hero-mascot-img {
     position: relative;
     z-index: 2;
+
     width: 100%;
     max-width: 420px;
     height: 380px;
+
     object-fit: contain;
+
     filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.25));
+
     animation: mascotFloat 4s ease-in-out infinite;
+
     transition: filter 0.3s ease;
 }
 
@@ -407,10 +456,12 @@ img {
     0%, 100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-12px);
     }
 }
+
 
 /* =========================================
    FLOATING INFORMATION CARDS
@@ -419,15 +470,21 @@ img {
 .hero-floating-card {
     position: absolute;
     z-index: 4;
+
     display: flex;
     align-items: center;
     gap: 12px;
+
     padding: 13px 17px;
+
     background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(255, 255, 255, 0.8);
     border-radius: 14px;
+
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
     backdrop-filter: blur(12px);
+
     animation: floatingCard 4s ease-in-out infinite;
 }
 
@@ -446,6 +503,7 @@ img {
     0%, 100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
@@ -454,16 +512,18 @@ img {
 .floating-icon {
     width: 43px;
     height: 43px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     border-radius: 12px;
     font-size: 19px;
 }
 
 .green-icon {
-    background: #dff1e4;
-    color: #198754;
+    background: #eee7f8;
+    color: #8968b5;
 }
 
 .yellow-icon {
@@ -477,16 +537,17 @@ img {
 }
 
 .hero-floating-card strong {
-    color: #20352a;
+    color: #352b42;
     font-size: 12px;
     font-weight: 800;
 }
 
 .hero-floating-card small {
-    color: #829087;
+    color: #82758e;
     font-size: 10px;
     margin-top: 3px;
 }
+
 
 /* =========================================
    DECORATIVE ICONS
@@ -495,19 +556,25 @@ img {
 .hero-decoration {
     position: absolute;
     z-index: 3;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     border-radius: 50%;
+
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
     animation: decorationFloat 5s ease-in-out infinite;
 }
 
 .decoration-one {
     top: 25px;
     right: 60px;
+
     width: 52px;
     height: 52px;
+
     background: #fde7e4;
     color: #dc7469;
     font-size: 22px;
@@ -516,22 +583,28 @@ img {
 .decoration-two {
     bottom: 30px;
     left: 45px;
+
     width: 45px;
     height: 45px;
+
     background: #fff2cf;
     color: #d49b25;
     font-size: 20px;
+
     animation-delay: 1s;
 }
 
 .decoration-three {
     top: 48%;
     right: 0;
+
     width: 38px;
     height: 38px;
+
     background: #e5efff;
     color: #477fc5;
     font-size: 17px;
+
     animation-delay: 2s;
 }
 
@@ -539,10 +612,12 @@ img {
     0%, 100% {
         transform: translateY(0) rotate(0deg);
     }
+
     50% {
         transform: translateY(-12px) rotate(12deg);
     }
 }
+
 
 /* =========================================
    9. CATEGORY & PRODUCT SECTIONS
@@ -560,6 +635,7 @@ img {
     align-items: center;
     justify-content: space-between;
     gap: 15px;
+
     margin-bottom: 24px;
 }
 
@@ -568,6 +644,7 @@ img {
     font-size: 23px;
     font-weight: 850;
     letter-spacing: -0.5px;
+
     margin-bottom: 5px;
 }
 
@@ -576,57 +653,72 @@ img {
     font-size: 12px;
 }
 
+
 /* =========================================
    10. CATEGORY CARDS
 ========================================= */
 
 .category-card {
     height: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 14px;
+
     padding: 26px 13px;
+
     background: var(--white);
     color: var(--text);
+
     text-align: center;
+
     border: 1px solid var(--border);
     border-radius: var(--radius);
+
     transition: all 0.28s ease;
 }
 
 .category-card i {
     width: 59px;
     height: 59px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     background: var(--primary-light);
     color: var(--primary);
+
     border-radius: 18px;
     font-size: 27px;
+
     transition: all 0.28s ease;
 }
 
 .category-card span {
-    color: #40594a;
+    color: #51415f;
     font-size: 13px;
     font-weight: 750;
 }
 
 .category-card:hover {
-    border-color: #a9d9b7;
-    background: #fcfffc;
+    border-color: #c9b4df;
+    background: #fcfaff;
+
     transform: translateY(-5px);
+
     box-shadow: var(--shadow-hover);
 }
 
 .category-card:hover i {
     background: var(--primary);
     color: var(--white);
+
     transform: scale(1.06);
 }
+
 
 /* =========================================
    11. PRODUCT CARDS
@@ -635,30 +727,40 @@ img {
 .product-card {
     height: 100%;
     overflow: hidden;
+
     background: var(--white);
+
     border: 1px solid var(--border);
     border-radius: var(--radius);
+
     transition: all 0.28s ease;
 }
 
 .product-card:hover {
-    border-color: #b3dec0;
+    border-color: #c9b4df;
+
     transform: translateY(-5px);
+
     box-shadow: var(--shadow-hover);
 }
 
 .product-image {
     position: relative;
+
     width: 100%;
     aspect-ratio: 1 / 1;
-    background: #f2f6f3;
+
+    background: #f4eff8;
+
     overflow: hidden;
 }
 
 .product-image img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     transition: transform 0.4s ease;
 }
 
@@ -670,12 +772,17 @@ img {
     position: absolute;
     top: 12px;
     left: 12px;
-    background: rgba(25, 135, 84, 0.95);
+
+    background: rgba(137, 104, 181, 0.95);
     color: var(--white);
+
     padding: 6px 11px;
+
     border-radius: 7px;
+
     font-size: 10px;
     font-weight: 750;
+
     backdrop-filter: blur(5px);
 }
 
@@ -686,10 +793,13 @@ img {
 .product-info h6 {
     height: 42px;
     overflow: hidden;
-    color: #34483a;
+
+    color: #51415f;
+
     font-size: 13px;
     font-weight: 650;
     line-height: 1.55;
+
     margin-bottom: 11px;
 }
 
@@ -698,6 +808,7 @@ img {
     font-size: 19px;
     font-weight: 850;
     letter-spacing: -0.3px;
+
     margin-bottom: 11px;
 }
 
@@ -705,24 +816,32 @@ img {
     display: flex;
     justify-content: space-between;
     gap: 6px;
+
     color: var(--muted);
     font-size: 10px;
+
     margin-bottom: 14px;
 }
 
 .add-cart-btn {
     width: 100%;
     padding: 10px 8px;
+
     background: var(--primary-light);
     color: var(--primary-dark);
-    border: 1px solid #d0e9d7;
+
+    border: 1px solid #dfd1ee;
     border-radius: 9px;
+
     font-size: 12px;
     font-weight: 750;
+
     cursor: not-allowed;
     opacity: 0.9;
+
     transition: all 0.25s ease;
 }
+
 
 /* =========================================
    12. EMPTY PRODUCTS & FOOTER
@@ -730,59 +849,291 @@ img {
 
 .empty-products {
     padding: 70px 20px;
+
     background: var(--white);
+
     text-align: center;
-    border: 1px dashed #cbded0;
+
+    border: 1px dashed #d6c6e5;
     border-radius: var(--radius);
 }
 
 .shop-footer {
     background: #ffffff;
+
     text-align: center;
+
     margin-top: 75px;
     padding: 45px 20px;
+
     border-top: 1px solid var(--border);
 }
+
+.shop-footer h5 {
+    color: var(--primary-dark);
+    font-weight: 850;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.shop-footer p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.shop-footer small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* =========================================
+   13. PRODUCT COUNT
+========================================= */
+
+.product-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px 14px;
+
+    background: var(--primary-light);
+    color: var(--primary-dark);
+
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 750;
+}
+
+
+/* =========================================
+   14. GLOBAL HOVER & FOCUS
+========================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid rgba(137, 104, 181, 0.35);
+    outline-offset: 3px;
+}
+
+::selection {
+    background: #d9c4ed;
+    color: #352b42;
+}
+
 
 /* =========================================
    15. RESPONSIVE MEDIA QUERIES
 ========================================= */
 
+@media (max-width: 1199.98px) {
+
+    .hero-content {
+        gap: 25px;
+    }
+
+    .hero-text {
+        padding: 15px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(36px, 4vw, 55px);
+    }
+
+    .card-one {
+        left: 0;
+    }
+
+    .card-two {
+        right: 0;
+    }
+}
+
+
 @media (max-width: 991.98px) {
+
     .hero-content {
         gap: 20px;
     }
+
     .hero-image {
         min-height: 350px;
     }
+
     .grocery-hero-img,
     .hero-mascot-img {
         height: 310px;
     }
+
+    .hero-floating-card {
+        padding: 10px 12px;
+    }
+
+    .hero-features {
+        gap: 14px;
+    }
+
+    .category-section,
+    .product-section {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
 }
 
+
 @media (max-width: 767.98px) {
+
     .hero-section {
         padding: 45px 15px;
     }
+
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 25px;
     }
+
+    .hero-text {
+        padding: 10px;
+    }
+
     .hero-text h1 {
         font-size: 39px;
         letter-spacing: -1.3px;
     }
+
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
+    }
+
     .hero-buttons,
     .hero-features {
         justify-content: center;
     }
+
+    .hero-image {
+        min-height: 350px;
+    }
+
+    .hero-image-circle {
+        width: min(300px, 80%);
+    }
+
+    .hero-image-ring {
+        width: min(340px, 95%);
+    }
+
+    .grocery-hero-img,
+    .hero-mascot-img {
+        max-width: 320px;
+        height: 300px;
+    }
+
+    .card-one {
+        top: 15px;
+        left: 0;
+    }
+
+    .card-two {
+        right: 0;
+        bottom: 15px;
+    }
+
+    .decoration-one {
+        right: 20px;
+    }
+
+    .decoration-two {
+        left: 15px;
+    }
+
+    .section-heading h3 {
+        font-size: 20px;
+    }
+
+    .category-section,
+    .product-section {
+        margin-top: 35px;
+    }
 }
 
-/* ACCESSIBILITY */
+
+@media (max-width: 480px) {
+
+    .hero-text h1 {
+        font-size: 34px;
+    }
+
+    .hero-label {
+        font-size: 10px;
+    }
+
+    .hero-features {
+        gap: 12px;
+    }
+
+    .hero-features div {
+        font-size: 10px;
+    }
+
+    .hero-features i {
+        font-size: 15px;
+    }
+
+    .hero-image {
+        min-height: 300px;
+    }
+
+    .grocery-hero-img,
+    .hero-mascot-img {
+        max-width: 270px;
+        height: 260px;
+    }
+
+    .hero-floating-card {
+        padding: 9px 11px;
+        gap: 8px;
+    }
+
+    .floating-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .hero-floating-card strong {
+        font-size: 10px;
+    }
+
+    .hero-floating-card small {
+        font-size: 9px;
+    }
+
+    .section-heading h3 {
+        font-size: 18px;
+    }
+
+    .product-info {
+        padding: 12px;
+    }
+
+    .product-price {
+        font-size: 17px;
+    }
+}
+
+
+/* =========================================
+   16. ACCESSIBILITY
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -790,4 +1141,5 @@ img {
         animation: none !important;
         transition: none !important;
     }
+
 }
