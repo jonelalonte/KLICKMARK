@@ -3,9 +3,11 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$baseUrl = "/KLICK%20MARK";
+// Dynamic base URL: blangko kapag nasa Render, /KLICK%20MARK kapag nasa localhost
+$baseUrl = (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) ? "/KLICK%20MARK" : "";
 $isLoggedIn = isset($_SESSION["user_id"]);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
