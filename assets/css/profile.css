@@ -156,44 +156,24 @@ a:focus-visible {
     color: #B8AAA0;
 }
 
-/* PROFILE HEADER */
+/* FORCE TERRACOTTA PROFILE BANNER */
 
 .profile-banner {
-    position: relative;
-    overflow: hidden;
+    position: relative !important;
+    overflow: hidden !important;
 
-    min-height: 176px;
-    padding: 35px 40px;
+    background: linear-gradient(
+        125deg,
+        #854B37 0%,
+        #A75D45 35%,
+        #B66A4B 68%,
+        #CE9573 100%
+    ) !important;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-
-    color: #fff;
-
-    background:
-        radial-gradient(
-            circle at 10% 35%,
-            rgba(231, 176, 145, .55) 0%,
-            transparent 38%
-        ),
-        radial-gradient(
-            circle at 85% 45%,
-            rgba(215, 169, 132, .55) 0%,
-            transparent 42%
-        ),
-        linear-gradient(
-            125deg,
-            #854B37 0%,
-            #A75D45 35%,
-            #B66A4B 68%,
-            #CE9573 100%
-        );
-
+    background-color: #A75D45 !important;
+    color: #FFFFFF !important;
     border-radius: 13px;
 }
-
 /* DECORATION */
 
 .profile-banner::before {
