@@ -1,14 +1,6 @@
-
 <?php
-require_once __DIR__ . "/config.php";
-require_once __DIR__ . "/firebaseRDB.php";
-
-$db = new firebaseRDB(FIREBASE_URL);
-
-$products = $db->retrieve("products");
-
-if (!is_array($products)) {
-    $products = [];
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
 }
 
 /* =========================================
