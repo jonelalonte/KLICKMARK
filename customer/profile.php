@@ -1,8 +1,10 @@
 
 <?php
-session_start();
-require_once("../config.php");
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
+// Siguraduhing dito na nakalagay ang session checks o pag-redirect bago magkaroon ng kahit anong HTML output
 // Siguraduhing naka-login ang user
 if (!isset($_SESSION["user_id"])) {
     header("Location: ../auth/login.php");
