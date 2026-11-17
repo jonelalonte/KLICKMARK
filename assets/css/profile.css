@@ -2,31 +2,29 @@
 /* =========================================
    KLICK MO
    CUSTOMER PROFILE — SIGNATURE EDITION
-   PURPLE BLUE GRADIENT THEME
+   WARM TERRACOTTA & BEIGE THEME
 ========================================= */
 
 :root {
-    --primary: #7652a8;
-    --primary-dark: #51458f;
-    --primary-soft: #f1edfa;
+    --primary: #B66A4B;
+    --primary-dark: #854B37;
+    --primary-soft: #F5E9E1;
 
-    --heading: #29283d;
-    --text: #55566b;
-    --muted: #89899f;
+    --heading: #302D2A;
+    --text: #5F5751;
+    --muted: #93877E;
 
-    --surface: #ffffff;
-    --page: #f7f7fc;
-    --line: #e9e8f1;
+    --surface: #FFFFFF;
+    --page: #F7F4F0;
+    --line: #EAE2DA;
 
-    --danger: #c94c43;
+    --danger: #C94C43;
 
-    --shadow: 0 8px 28px rgba(73, 66, 130, 0.07);
+    --shadow: 0 8px 28px rgba(76, 54, 40, 0.07);
     --radius: 12px;
 }
 
-/* =========================================
-   BASE
-========================================= */
+/* BASE */
 
 * {
     margin: 0;
@@ -58,13 +56,11 @@ a {
 }
 
 a:focus-visible {
-    outline: 3px solid rgba(118, 82, 168, .25);
+    outline: 3px solid rgba(182, 106, 75, .25);
     outline-offset: 4px;
 }
 
-/* =========================================
-   NAVIGATION
-========================================= */
+/* NAVIGATION */
 
 .profile-navbar {
     position: sticky;
@@ -123,9 +119,7 @@ a:focus-visible {
     color: var(--primary-dark);
 }
 
-/* =========================================
-   MAIN CONTAINER
-========================================= */
+/* MAIN CONTAINER */
 
 .profile-container {
     width: 100%;
@@ -134,7 +128,7 @@ a:focus-visible {
     padding: 28px 28px 0;
 }
 
-/* Breadcrumb */
+/* BREADCRUMB */
 
 .breadcrumb {
     display: flex;
@@ -159,12 +153,10 @@ a:focus-visible {
 
 .breadcrumb i {
     font-size: 9px;
-    color: #b5b4c5;
+    color: #B8AAA0;
 }
 
-/* =========================================
-   PROFILE HEADER
-========================================= */
+/* PROFILE HEADER */
 
 .profile-banner {
     position: relative;
@@ -183,27 +175,26 @@ a:focus-visible {
     background:
         radial-gradient(
             circle at 10% 35%,
-            rgba(255, 190, 210, 0.95) 0%,
+            rgba(231, 176, 145, .55) 0%,
             transparent 38%
         ),
         radial-gradient(
             circle at 85% 45%,
-            rgba(35, 195, 225, 0.95) 0%,
+            rgba(215, 169, 132, .55) 0%,
             transparent 42%
         ),
         linear-gradient(
-            145deg,
-            #96539f 0%,
-            #c18cbd 25%,
-            #a9c9df 52%,
-            #498fc4 75%,
-            #414c9e 100%
+            125deg,
+            #854B37 0%,
+            #A75D45 35%,
+            #B66A4B 68%,
+            #CE9573 100%
         );
 
     border-radius: 13px;
 }
 
-/* Decorative background detail */
+/* DECORATION */
 
 .profile-banner::before {
     content: "";
@@ -252,6 +243,8 @@ a:focus-visible {
     min-width: 0;
 }
 
+/* AVATAR */
+
 .avatar {
     position: relative;
     flex-shrink: 0;
@@ -285,14 +278,14 @@ a:focus-visible {
     border: 3px solid #fff;
     border-radius: 50%;
 
-    background: #60c98b;
+    background: #60B985;
 }
 
 .welcome-label {
     display: block;
     margin-bottom: 5px;
 
-    color: #f7e8ff;
+    color: #F8E8DD;
 
     font-size: 10px;
     font-weight: 700;
@@ -326,7 +319,7 @@ a:focus-visible {
     margin-right: 6px;
 }
 
-/* Edit Button */
+/* EDIT BUTTON */
 
 .edit-profile-btn {
     position: relative;
@@ -356,14 +349,12 @@ a:focus-visible {
 }
 
 .edit-profile-btn:hover {
-    background: #f3effb;
+    background: #F5E9E1;
     box-shadow: 0 5px 15px rgba(0,0,0,.12);
     transform: translateY(-1px);
 }
 
-/* =========================================
-   SECTION HEADINGS
-========================================= */
+/* SECTION HEADINGS */
 
 .purchase-section {
     margin-top: 39px;
@@ -422,15 +413,14 @@ a:focus-visible {
 
 .view-all:hover {
     gap: 12px;
+    color: var(--primary-dark);
 }
 
 .view-all i {
     font-size: 12px;
 }
 
-/* =========================================
-   PURCHASE STATUS
-========================================= */
+/* PURCHASE STATUS */
 
 .purchase-grid {
     display: grid;
@@ -459,7 +449,7 @@ a:focus-visible {
 }
 
 .purchase-card:hover {
-    border-color: #d5c9ed;
+    border-color: #DCC0B0;
     box-shadow: var(--shadow);
     transform: translateY(-2px);
 }
@@ -477,24 +467,26 @@ a:focus-visible {
     font-size: 19px;
 }
 
+/* STATUS COLORS */
+
 .orange {
-    background: #fff5e9;
-    color: #c88335;
+    background: #FBEDE2;
+    color: #B96C3D;
 }
 
 .blue {
-    background: #edf4fa;
-    color: #477ba9;
+    background: #EBF0F0;
+    color: #557F83;
 }
 
 .purple {
-    background: #f3effa;
-    color: #8063ad;
+    background: #F3E9E2;
+    color: #A2674C;
 }
 
 .green {
-    background: #edf5fb;
-    color: #477ba9;
+    background: #EAF2EA;
+    color: #58815D;
 }
 
 .purchase-card h3 {
@@ -513,7 +505,7 @@ a:focus-visible {
 
 .card-arrow {
     margin-left: auto;
-    color: #aeb0c1;
+    color: #B5A79E;
     font-size: 11px;
     transition: transform .2s ease;
 }
@@ -522,9 +514,7 @@ a:focus-visible {
     transform: translateX(3px);
 }
 
-/* =========================================
-   ACCOUNT SECTIONS
-========================================= */
+/* ACCOUNT SECTIONS */
 
 .profile-content {
     display: grid;
@@ -552,7 +542,7 @@ a:focus-visible {
     font-size: 19px;
 }
 
-/* Menu Items */
+/* MENU ITEMS */
 
 .menu-item {
     min-width: 0;
@@ -563,7 +553,7 @@ a:focus-visible {
 
     padding: 14px 3px;
 
-    border-bottom: 1px solid #f0eff5;
+    border-bottom: 1px solid #F0EAE4;
 
     transition:
         background .2s ease,
@@ -576,7 +566,7 @@ a:focus-visible {
 
 .menu-item:hover {
     padding-left: 8px;
-    background: #faf9fd;
+    background: #FBF8F5;
 }
 
 .menu-icon {
@@ -618,7 +608,7 @@ a:focus-visible {
 
 .menu-arrow {
     flex-shrink: 0;
-    color: #b1b0c1;
+    color: #B5A79E;
     font-size: 12px;
 
     transition: transform .2s ease;
@@ -628,10 +618,10 @@ a:focus-visible {
     transform: translateX(3px);
 }
 
-/* Logout */
+/* LOGOUT */
 
 .logout-item .menu-icon {
-    background: #fcf0ee;
+    background: #FBECE9;
     color: var(--danger);
 }
 
@@ -639,9 +629,7 @@ a:focus-visible {
     color: var(--danger);
 }
 
-/* =========================================
-   FOOTER
-========================================= */
+/* FOOTER */
 
 .profile-footer {
     margin-top: 35px;
@@ -654,9 +642,7 @@ a:focus-visible {
     text-align: center;
 }
 
-/* =========================================
-   TABLET
-========================================= */
+/* TABLET */
 
 @media (max-width: 900px) {
 
@@ -674,9 +660,7 @@ a:focus-visible {
     }
 }
 
-/* =========================================
-   MOBILE
-========================================= */
+/* MOBILE */
 
 @media (max-width: 560px) {
 
@@ -837,9 +821,7 @@ a:focus-visible {
     }
 }
 
-/* =========================================
-   SMALL PHONES
-========================================= */
+/* SMALL PHONES */
 
 @media (max-width: 360px) {
 
@@ -866,9 +848,7 @@ a:focus-visible {
     }
 }
 
-/* =========================================
-   ACCESSIBILITY
-========================================= */
+/* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
 
