@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 require_once("../config.php");
@@ -9,14 +10,16 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 $userId = $_SESSION["user_id"];
-// Default values mula sa PHP session (itinama natin para basahin ang user_name at user_email)
+
+// Default values mula sa PHP session
 $user = [
     "name"    => $_SESSION["user_name"] ?? $_SESSION["name"] ?? "Valued Customer",
     "email"   => $_SESSION["user_email"] ?? $_SESSION["email"] ?? "",
     "phone"   => "",
     "address" => ""
 ];
-// Kunin ang latest profile information mula Firebase para sigurado
+
+// Kunin ang latest profile information mula Firebase
 if (
     defined("FIREBASE_URL") &&
     !empty($_SESSION["id_token"]) &&
@@ -41,20 +44,21 @@ if (
         $firebaseUser = json_decode($response, true);
 
         if (is_array($firebaseUser)) {
-            // Kung may pangalan sa database, gamitin iyon sa halip na "Customer"
             if (!empty($firebaseUser["name"])) {
                 $user["name"] = $firebaseUser["name"];
             }
+
             if (!empty($firebaseUser["email"])) {
                 $user["email"] = $firebaseUser["email"];
             }
+
             $user["phone"] = $firebaseUser["phone"] ?? "";
             $user["address"] = $firebaseUser["address"] ?? "";
         }
     }
 }
 
-// Update session values para updated palagi
+// Update session values
 $_SESSION["name"] = $user["name"];
 $_SESSION["email"] = $user["email"];
 
@@ -77,9 +81,10 @@ if ($initials === "") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Profile | KLICK MARK</title>
+    <title>My Profile | KLICK MO</title>
 
     <link rel="stylesheet" href="../assets/css/profile.css">
+
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
@@ -88,15 +93,17 @@ if ($initials === "") {
 <!-- TOP NAVIGATION -->
 <header class="profile-navbar">
     <div class="navbar-inner">
+
         <a href="../index.php" class="brand">
-            <img src="../assets/images/logo.png" alt="KLICK MARK">
-            <span>KLICK <strong>MARK</strong></span>
+            <img src="../assets/images/logo.png" alt="KLICK MO">
+            <span>KLICK <strong>MO</strong></span>
         </a>
 
         <a href="../index.php" class="back-shop">
             <i class="bi bi-shop"></i>
             <span>Continue Shopping</span>
         </a>
+
     </div>
 </header>
 
@@ -111,6 +118,7 @@ if ($initials === "") {
 
     <!-- PROFILE HEADER -->
     <section class="profile-banner">
+
         <div class="profile-identity">
 
             <div class="avatar">
@@ -130,17 +138,21 @@ if ($initials === "") {
                     <?= htmlspecialchars($user["email"]) ?>
                 </p>
             </div>
+
         </div>
 
         <a href="edit-profile.php" class="edit-profile-btn">
             <i class="bi bi-pencil-square"></i>
             Edit Profile
         </a>
+
     </section>
 
     <!-- PURCHASE STATUS -->
     <section class="purchase-section">
+
         <div class="section-heading">
+
             <div>
                 <span class="section-eyebrow">YOUR SHOPPING ACTIVITY</span>
                 <h2>My Purchases</h2>
@@ -151,6 +163,7 @@ if ($initials === "") {
                 View Order History
                 <i class="bi bi-arrow-right"></i>
             </a>
+
         </div>
 
         <div class="purchase-grid">
@@ -206,6 +219,7 @@ if ($initials === "") {
     <div class="profile-content">
 
         <section class="account-card">
+
             <div class="section-heading compact">
                 <div>
                     <span class="section-eyebrow">PERSONAL INFORMATION</span>
@@ -256,9 +270,11 @@ if ($initials === "") {
                 </div>
                 <i class="bi bi-chevron-right menu-arrow"></i>
             </a>
+
         </section>
 
         <section class="account-card">
+
             <div class="section-heading compact">
                 <div>
                     <span class="section-eyebrow">SUPPORT & INFORMATION</span>
@@ -301,21 +317,26 @@ if ($initials === "") {
 
             <a href="../auth/logout.php" class="menu-item logout-item"
                onclick="return confirm('Are you sure you want to log out?');">
+
                 <div class="menu-icon">
                     <i class="bi bi-box-arrow-right"></i>
                 </div>
+
                 <div class="menu-text">
                     <h3>Logout</h3>
-                    <p>Sign out of your KLICK MARK account</p>
+                    <p>Sign out of your KLICK MO account</p>
                 </div>
+
                 <i class="bi bi-chevron-right menu-arrow"></i>
             </a>
+
         </section>
 
     </div>
 
+    <!-- FOOTER -->
     <footer class="profile-footer">
-        <p>&copy; <?= date("Y") ?> KLICK MARK. Fresh choices, better living.</p>
+        <p>&copy; <?= date("Y") ?> KLICK MO. Fresh choices, better living.</p>
     </footer>
 
 </main>
