@@ -300,7 +300,7 @@ include __DIR__ . "/includes/header.php";
      CATEGORIES SECTION
 ===================================== -->
 
-<section class="container-fluid px-4 category-section">
+<section id="categories" class="container-fluid px-4 category-section">
 
     <div class="section-heading">
 
@@ -319,21 +319,13 @@ include __DIR__ . "/includes/header.php";
         $categories = [
 
             ["Electronics", "bi-laptop"],
-
             ["Fashion", "bi-handbag"],
-
             ["Beauty & Personal Care", "bi-stars"],
-
             ["Home & Living", "bi-house-heart"],
-
             ["Gadgets", "bi-smartwatch"],
-
             ["Computer Accessories", "bi-mouse"],
-
             ["Fashion Accessories", "bi-eyeglasses"],
-
             ["Bags & Travel", "bi-backpack"],
-
             ["Sports & Outdoors", "bi-bicycle"]
 
         ];
@@ -364,7 +356,6 @@ include __DIR__ . "/includes/header.php";
     </div>
 
 </section>
-
 
 <!-- =====================================
      FEATURED PRODUCTS
