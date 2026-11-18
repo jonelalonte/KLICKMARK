@@ -1,26 +1,25 @@
-
 /* =========================================
    KLICK MO
    CUSTOMER PROFILE — SIGNATURE EDITION
-   WARM TERRACOTTA & BEIGE THEME
+   PINK, LAVENDER & SKY BLUE GRADIENT THEME
 ========================================= */
 
 :root {
-    --primary: #B66A4B;
-    --primary-dark: #854B37;
-    --primary-soft: #F5E9E1;
+    --primary: #8968B5;
+    --primary-dark: #6B4C96;
+    --primary-soft: #F1ECFA;
 
-    --heading: #302D2A;
-    --text: #5F5751;
-    --muted: #93877E;
+    --heading: #2B2438;
+    --text: #564E66;
+    --muted: #8C829E;
 
     --surface: #FFFFFF;
-    --page: #F7F4F0;
-    --line: #EAE2DA;
+    --page: #F6F5FA;
+    --line: #E6E2F0;
 
-    --danger: #C94C43;
+    --danger: #D94E5A;
 
-    --shadow: 0 8px 28px rgba(76, 54, 40, 0.07);
+    --shadow: 0 8px 28px rgba(107, 76, 150, 0.09);
     --radius: 12px;
 }
 
@@ -56,7 +55,7 @@ a {
 }
 
 a:focus-visible {
-    outline: 3px solid rgba(182, 106, 75, .25);
+    outline: 3px solid rgba(137, 104, 181, .3);
     outline-offset: 4px;
 }
 
@@ -153,27 +152,33 @@ a:focus-visible {
 
 .breadcrumb i {
     font-size: 9px;
-    color: #B8AAA0;
+    color: #B2A8C4;
 }
 
-/* FORCE TERRACOTTA PROFILE BANNER */
+/* VECTOR GRADIENT PROFILE BANNER */
 
 .profile-banner {
     position: relative !important;
     overflow: hidden !important;
 
-    background: linear-gradient(
-        125deg,
-        #854B37 0%,
-        #A75D45 35%,
-        #B66A4B 68%,
-        #CE9573 100%
-    ) !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 34px 36px;
 
-    background-color: #A75D45 !important;
+    background:
+        radial-gradient(circle at 18% 72%, rgba(236, 159, 198, 0.92) 0%, rgba(236, 159, 198, 0) 52%),
+        radial-gradient(circle at 86% 68%, rgba(44, 181, 232, 0.95) 0%, rgba(44, 181, 232, 0) 56%),
+        radial-gradient(circle at 52% 48%, rgba(196, 217, 238, 0.9) 0%, rgba(196, 217, 238, 0) 62%),
+        linear-gradient(135deg, #9C59A8 0%, #B784C7 35%, #78B9DF 72%, #249FD6 100%) !important;
+
+    background-color: #9C59A8 !important;
     color: #FFFFFF !important;
     border-radius: 13px;
+    box-shadow: 0 12px 32px rgba(137, 104, 181, 0.22);
 }
+
 /* DECORATION */
 
 .profile-banner::before {
@@ -186,12 +191,12 @@ a:focus-visible {
     right: 7%;
     top: -205px;
 
-    border: 1px solid rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.24);
     border-radius: 50%;
 
     box-shadow:
-        0 0 0 28px rgba(255,255,255,.035),
-        0 0 0 58px rgba(255,255,255,.025);
+        0 0 0 28px rgba(255,255,255,.05),
+        0 0 0 58px rgba(255,255,255,.035);
 
     pointer-events: none;
 }
@@ -206,7 +211,7 @@ a:focus-visible {
     right: -70px;
     bottom: -125px;
 
-    border: 1px solid rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.24);
     border-radius: 50%;
 
     pointer-events: none;
@@ -236,11 +241,11 @@ a:focus-visible {
     align-items: center;
     justify-content: center;
 
-    border: 3px solid rgba(255,255,255,.65);
+    border: 3px solid rgba(255,255,255,.75);
     border-radius: 50%;
 
-    background: rgba(255,255,255,.94);
-    color: var(--primary);
+    background: rgba(255,255,255,.95);
+    color: var(--primary-dark);
 
     font-size: 25px;
     font-weight: 800;
@@ -258,18 +263,19 @@ a:focus-visible {
     border: 3px solid #fff;
     border-radius: 50%;
 
-    background: #60B985;
+    background: #48C78E;
 }
 
 .welcome-label {
     display: block;
     margin-bottom: 5px;
 
-    color: #F8E8DD;
+    color: rgba(255, 255, 255, 0.92);
 
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 2px;
+    text-shadow: 0 1px 4px rgba(45, 25, 75, 0.25);
 }
 
 .profile-info {
@@ -285,13 +291,15 @@ a:focus-visible {
     line-height: 1.2;
     font-weight: 700;
     letter-spacing: -.8px;
+    text-shadow: 0 2px 8px rgba(45, 25, 75, 0.22);
 
     overflow-wrap: anywhere;
 }
 
 .profile-info p {
-    color: rgba(255,255,255,.88);
+    color: rgba(255,255,255,.94);
     font-size: 12px;
+    text-shadow: 0 1px 4px rgba(45, 25, 75, 0.2);
     overflow-wrap: anywhere;
 }
 
@@ -312,10 +320,10 @@ a:focus-visible {
 
     padding: 11px 17px;
 
-    background: #fff;
+    background: rgba(255, 255, 255, 0.95);
     color: var(--primary-dark);
 
-    border: 1px solid rgba(255,255,255,.7);
+    border: 1px solid rgba(255,255,255,.8);
     border-radius: 6px;
 
     font-size: 12px;
@@ -329,8 +337,8 @@ a:focus-visible {
 }
 
 .edit-profile-btn:hover {
-    background: #F5E9E1;
-    box-shadow: 0 5px 15px rgba(0,0,0,.12);
+    background: #FFFFFF;
+    box-shadow: 0 5px 15px rgba(45, 25, 75, 0.16);
     transform: translateY(-1px);
 }
 
@@ -429,7 +437,7 @@ a:focus-visible {
 }
 
 .purchase-card:hover {
-    border-color: #DCC0B0;
+    border-color: #CBBBE6;
     box-shadow: var(--shadow);
     transform: translateY(-2px);
 }
@@ -450,23 +458,23 @@ a:focus-visible {
 /* STATUS COLORS */
 
 .orange {
-    background: #FBEDE2;
-    color: #B96C3D;
+    background: #FDF0E6;
+    color: #C9763D;
 }
 
 .blue {
-    background: #EBF0F0;
-    color: #557F83;
+    background: #E6F4FA;
+    color: #2A9FD6;
 }
 
 .purple {
-    background: #F3E9E2;
-    color: #A2674C;
+    background: #F1ECFA;
+    color: #8968B5;
 }
 
 .green {
-    background: #EAF2EA;
-    color: #58815D;
+    background: #E8F6EE;
+    color: #3E8E63;
 }
 
 .purchase-card h3 {
@@ -485,7 +493,7 @@ a:focus-visible {
 
 .card-arrow {
     margin-left: auto;
-    color: #B5A79E;
+    color: #B2A8C4;
     font-size: 11px;
     transition: transform .2s ease;
 }
@@ -533,7 +541,7 @@ a:focus-visible {
 
     padding: 14px 3px;
 
-    border-bottom: 1px solid #F0EAE4;
+    border-bottom: 1px solid #F0EDF7;
 
     transition:
         background .2s ease,
@@ -546,7 +554,7 @@ a:focus-visible {
 
 .menu-item:hover {
     padding-left: 8px;
-    background: #FBF8F5;
+    background: #FAF8FE;
 }
 
 .menu-icon {
@@ -588,7 +596,7 @@ a:focus-visible {
 
 .menu-arrow {
     flex-shrink: 0;
-    color: #B5A79E;
+    color: #B2A8C4;
     font-size: 12px;
 
     transition: transform .2s ease;
@@ -601,7 +609,7 @@ a:focus-visible {
 /* LOGOUT */
 
 .logout-item .menu-icon {
-    background: #FBECE9;
+    background: #FDECEE;
     color: var(--danger);
 }
 
